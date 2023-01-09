@@ -2,5 +2,4 @@
 - hosts: localhost
   gather_facts: true
   roles:
-    - role: 
-      - ansible-role-ldap
+    - ansible-role-ldap
