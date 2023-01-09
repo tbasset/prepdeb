@@ -5,7 +5,7 @@ ldap_version: 3
 ldap_home_umask: "0022"
 ldap_tls_reqcert: never
 ldap_uri: ldap://172.16.203.20
-ldap_base: dc=lab,dc=loxda,dc=net
+ldap_base: ou=Users,dc=lab,dc=loxda,dc=net
 ldap_scope: sub
 ldap_bind_timelimit: 50
 ldap_search_timelimit: 50
@@ -15,8 +15,8 @@ ldap_pagesize: 1000
 ldap_referrals: 'yes'
 ldap_idle_timelimit: 300
 ldap_filters: |
-  filter passwd (&(objectClass=posixAccount)(!(objectClass=computer)))
-  filter shadow (&(objectClass=posixAccount)(!(objectClass=computer)))
-  filter group (&(|(objectClass=posixGroup)(Objectclass=posixAccount))(!(objectClass=computer)))
+  filter passwd (&(objectClass=inetOrgPerson)(!(objectClass=computer)))
+  filter shadow (&(objectClass=inetOrgPerson)(!(objectClass=computer)))
+  filter group (&(|(objectClass=posixGroup)(Objectclass=inetOrgPerson))(!(objectClass=computer)))
 ldap_nslcd_extra_params: |
   nss_initgroups_ignoreusers  root
