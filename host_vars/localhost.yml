@@ -15,9 +15,8 @@ ldap_pagesize: 1000
 ldap_referrals: 'yes'
 ldap_idle_timelimit: 300
 ldap_filters: |
-  filter passwd (&(objectClass=user)(!(objectClass=computer)))
-  filter shadow (&(objectClass=user)(!(objectClass=computer)))
-  filter group (&(|(objectClass=group)(Objectclass=user))(!(objectClass=computer)))
+  filter passwd (&(objectClass=posixAccount)(!(objectClass=computer)))
+  filter shadow (&(objectClass=posixAccount)(!(objectClass=computer)))
+  filter group (&(|(objectClass=posixGroup)(Objectclass=posixAccount))(!(objectClass=computer)))
 ldap_nslcd_extra_params: |
-  ssl start_tls
   nss_initgroups_ignoreusers  root
