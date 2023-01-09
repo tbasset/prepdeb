@@ -1,5 +1,5 @@
 ---
-- hosts: "{{ inventory_hostname | default(localhost) }}"
+- hosts: localhost
   gather_facts: true
   roles:
     - role: 
