@@ -9,6 +9,8 @@ ldap_base: ou=Users,dc=lab,dc=loxda,dc=net
 ldap_scope: sub
 ldap_bind_timelimit: 50
 ldap_search_timelimit: 50
+ldap_binddn: 
+ldap_bindpw: 
 ldap_pagesize: 1000
 ldap_referrals: 'yes'
 ldap_idle_timelimit: 300
