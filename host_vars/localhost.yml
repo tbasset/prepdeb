@@ -9,14 +9,14 @@ ldap_base: ou=Users,dc=lab,dc=loxda,dc=net
 ldap_scope: sub
 ldap_bind_timelimit: 50
 ldap_search_timelimit: 50
-ldap_binddn: "{{ xldap_binddn }}"
-ldap_bindpw: "{{ xldap_bindpw }}"
 ldap_pagesize: 1000
 ldap_referrals: 'yes'
 ldap_idle_timelimit: 300
 ldap_filters: |
-  filter passwd (&(objectClass=inetOrgPerson)(!(objectClass=computer)))
-  filter shadow (&(objectClass=inetOrgPerson)(!(objectClass=computer)))
-  filter group (&(|(objectClass=posixGroup)(Objectclass=inetOrgPerson))(!(objectClass=computer)))
+  filter passwd (objectClass=posixAccount)
+  filter shadow (objectClass=posixAccount)
+  filter group (|(objectClass=posixGroup)(Objectclass=posixAccount))
 ldap_nslcd_extra_params: |
   nss_initgroups_ignoreusers  root
+  pam_authz_search (&(objectClass=posixAccount)(uid=$username)(|(host=$hostname)(host=$fqdn)(&(host=\\*)(!(|(host=!$hostname)(host=!$fqdn))))))
+  pam_password_prohibit_message "Change your password on Self Service Portal. thx bro."
