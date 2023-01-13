@@ -9,7 +9,7 @@ grub_options:
 ca_certificates_trusted: "{{ xca_certificates_trusted }}"
 ca_certificates_update: true
 
-ldap_tls_reqcert: always
+ldap_tls_reqcert: never
 ldap_uri: "{{ xldap_uri }}"
 ldap_base: "{{ xldap_base }}"
 ldap_binddn: "{{ xldap_binddn }}"
