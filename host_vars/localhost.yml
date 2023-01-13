@@ -15,10 +15,13 @@ ldap_pagesize: 1000
 ldap_referrals: 'yes'
 ldap_idle_timelimit: 300
 ldap_filters: |
-  filter passwd (objectClass=posixAccount)
-  filter shadow (objectClass=posixAccount)
-  filter group (|(objectClass=posixGroup)(Objectclass=posixAccount))
+  filter passwd (|(objectClass=posixAccount)(objectClass=inetOrgPerson))
+  filter shadow (|(objectClass=posixAccount)(objectClass=inetOrgPerson))
+  filter group  (|(objectClass=posixGroup)(Objectclass=posixAccount))
 ldap_nslcd_extra_params: |
-  nss_initgroups_ignoreusers  root
-  pam_authz_search (&(objectClass=posixAccount)(uid=$username)(|(host=$hostname)(host=$fqdn)(&(host=\\*)(!(|(host=!$hostname)(host=!$fqdn))))))
+  nss_initgroups_ignoreusers root
+  pam_authz_search (&(objectClass=posixAccount)(uid=$username))
   pam_password_prohibit_message "Change your password on Self Service Portal. thx bro."
+
+#emulate pam_attr_host and negative behavior
+#pam_authz_search (&(objectClass=posixAccount)(uid=$username)(|(host=$hostname)(host=$fqdn)(&(host=\\*)(!(|(host=!$hostname)(host=!$fqdn))))))
