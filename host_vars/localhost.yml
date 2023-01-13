@@ -34,7 +34,7 @@ tmux_conf_dir: .tmux
 tmux_conf_file: .tmux.conf
 tmux_conf_force: false
 tmux_plugins:
-  - { name: "tpm", repo: "https://github.com/tbasset/tpm.git" }
+  - { name: "tpm", repo: "https://github.com/tbasset/tpm.git", version: "master" }
 
 powerline_default_top_theme: powerline
 
