@@ -1,3 +1,6 @@
 [submodule "roles/ansible-role-ldap"]
 	path = roles/ansible-role-ldap
 	url = https://github.com/tbasset/ansible-role-ldap.git
+[submodule "roles/ansible-role-interfaces"]
+	path = roles/ansible-role-interfaces
+	url = https://github.com/tbasset/ansible-role-interfaces.git
