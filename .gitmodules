@@ -16,3 +16,6 @@
 [submodule "roles/ansible-role-grub"]
 	path = roles/ansible-role-grub
 	url = https://github.com/tbasset/ansible-role-grub.git
+[submodule "roles/ansible-role-firewall"]
+	path = roles/ansible-role-firewall
+	url = https://github.com/tbasset/ansible-role-firewall.git

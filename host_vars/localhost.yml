@@ -5,6 +5,8 @@ grub_timeout: 2
 grub_options:
   - option: net.ifnames
     value: 0
+  - option: ipv6.disable
+    value: 1
 
 ca_certificates_trusted: "{{ xca_certificates_trusted }}"
 ca_certificates_update: true
@@ -23,9 +25,6 @@ ldap_nslcd_extra_params: |
   pam_authz_search (&(objectClass=posixAccount)(uid=$username))
   pam_password_prohibit_message "Change your password on Self Service Portal. thx bro."
 
-#emulate pam_attr_host and negative behavior
-#pam_authz_search (&(objectClass=posixAccount)(uid=$username)(|(host=$hostname)(host=$fqdn)(&(host=\\*)(!(|(host=!$hostname)(host=!$fqdn))))))
-
 tmux_packages: tmux
 tmux_packages_state: present
 tmux_plugin_dir: .tmux/plugins
@@ -33,8 +32,6 @@ tmux_conf_template: tmux.conf
 tmux_conf_dir: .tmux
 tmux_conf_file: .tmux.conf
 tmux_conf_force: false
-# tmux_plugins:
-#   - { name: "tpm", repo: "https://github.com/tbasset/tpm.git", version: "master" }
 
 powerline_default_top_theme: powerline
 
@@ -100,3 +97,20 @@ interfaces_bond_interfaces: []
   #   bond_lacp_rate: 1
   #   bond_xmit_hash_policy: layer3+4
   #   bond_slaves: [eth2, eth3]
+
+firewall_state: started
+firewall_enabled_at_boot: true
+firewall_flush_rules_and_chains: true
+firewall_log_dropped_packets: true
+firewall_allowed_tcp_ports:
+  # - "22"
+  # - "25"
+  # - "80"
+  # - "443"
+firewall_allowed_udp_ports: []
+  # - "53"
+firewall_additional_rules: []
+  # - "iptables -A INPUT -p tcp --dport 22 -s 192.168.100.0/24 -j ACCEPT"
+  # - "iptables -A INPUT -p udp --dport 53 -s 192.168.100.0/24 -j ACCEPT"
+  # - "iptables -A INPUT -p udp --dport 53 -s 192.168.200.0/24 -j ACCEPT"
+  # - "iptables -A INPUT -p udp --dport 53 -s 192.168.300.0/24 -j ACCEPT"
