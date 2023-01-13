@@ -9,8 +9,8 @@ ldap_base: ou=Users,dc=lab,dc=loxda,dc=net
 ldap_scope: sub
 ldap_bind_timelimit: 50
 ldap_search_timelimit: 50
-ldap_binddn: cn=bind,dc=lab,dc=loxda,dc=net
-ldap_bindpw: papillon
+ldap_binddn: "{{ xldap_binddn }}"
+ldap_bindpw: "{{ xldap_bindpw }}"
 ldap_pagesize: 1000
 ldap_referrals: 'yes'
 ldap_idle_timelimit: 300
@@ -34,7 +34,10 @@ tmux_conf_dir: .tmux
 tmux_conf_file: .tmux.conf
 tmux_conf_force: false
 tmux_plugins:
-  - { name: "tpm", repo: "https://github.com/tbasset/tpm.git", version: "v3.0.0" }
+  - { name: "tpm", repo: "https://github.com/tbasset/tpm.git" }
 
 powerline_default_top_theme: powerline
+
+ca_certificates_trusted: "{{ xca_certificates_trusted }}"
+ca_certificates_update: true
 

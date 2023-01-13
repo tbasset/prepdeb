@@ -10,3 +10,6 @@
 [submodule "roles/ansible-role-tmux"]
 	path = roles/ansible-role-tmux
 	url = https://github.com/tbasset/ansible-role-tmux.git
+[submodule "roles/ansible-role-ca-certificates"]
+	path = roles/ansible-role-ca-certificates
+	url = https://github.com/tbasset/ansible-role-ca-certificates.git
