@@ -1,6 +1,9 @@
 ---
 ansible_python_interpreter: /usr/bin/python3
 
+ca_certificates_trusted: "{{ xca_certificates_trusted }}"
+ca_certificates_update: true
+
 ldap_version: 3
 ldap_home_umask: "0022"
 ldap_tls_reqcert: never
@@ -33,11 +36,69 @@ tmux_conf_template: tmux.conf
 tmux_conf_dir: .tmux
 tmux_conf_file: .tmux.conf
 tmux_conf_force: false
-tmux_plugins:
-  - { name: "tpm", repo: "https://github.com/tbasset/tpm.git", version: "master" }
+# tmux_plugins:
+#   - { name: "tpm", repo: "https://github.com/tbasset/tpm.git", version: "master" }
 
 powerline_default_top_theme: powerline
 
-ca_certificates_trusted: "{{ xca_certificates_trusted }}"
-ca_certificates_update: true
-
+interfaces_route_tables: []
+  # - network: 192.168.200.0
+  #   netmask: 255.255.255.0
+  #   gateway: 192.168.1.1
+  # - network: 192.168.100.0
+  #   netmask: 255.255.255.0
+  #   gateway: 192.168.1.1
+interfaces_ether_interfaces: []
+  # - device: eth0
+  #   mtu: 1500
+  # - device: eth1
+  #   mtu: 1500
+  # - device: eth2
+  #   mtu: 1500
+  # - device: eth3
+  #   mtu: 1500
+  # - device: bond1.10
+  #   mtu: 1500
+  # - device: bond1.20
+  #   mtu: 1500
+  # - device: bond2.30
+  #   mtu: 1500
+  # - device: bond2.40
+  #   mtu: 1500
+interfaces_bridge_interfaces: []
+  # - device: vmbr1
+  #   type: bridge
+  #   stp: "on"
+  #   mtu: 1500
+  #   ports: [bond1.10]
+  # - device: vmbr2
+  #   type: bridge
+  #   stp: "on"
+  #   mtu: 1500
+  #   ports: [bond1.20]
+  # - device: vmbr3
+  #   type: bridge
+  #   stp: "on"
+  #   mtu: 1500
+  #   ports: [bond2.30]
+  # - device: vmbr4
+  #   type: bridge
+  #   stp: "on"
+  #   mtu: 1500
+  #   ports: [bond2.40]
+interfaces_bond_interfaces: []
+  # - device: bond1
+  #   mtu: 1500
+  #   bond_mode: active-backup
+  #   bond_miimon: 100
+  #   bond_slaves: [eth0, eth1]
+  # - device: bond2
+  #   mtu: 1500
+  #   bond_mode: 802.3ad
+  #   bond_ad_select: bandwidth
+  #   bond_miimon: 100
+  #   bond_downdelay: 200
+  #   bond_updelay: 200
+  #   bond_lacp_rate: 1
+  #   bond_xmit_hash_policy: layer3+4
+  #   bond_slaves: [eth2, eth3]
