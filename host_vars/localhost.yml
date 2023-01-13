@@ -41,7 +41,7 @@ interfaces_route_tables: []
   #   netmask: 255.255.255.0
   #   gateway: 192.168.1.1
 interfaces_ether_interfaces:
-  - device: eth0
+  - device: ens32
     mtu: 1500
     bootproto: dhcp
   # - device: eth1
