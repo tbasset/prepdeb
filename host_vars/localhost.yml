@@ -25,3 +25,16 @@ ldap_nslcd_extra_params: |
 
 #emulate pam_attr_host and negative behavior
 #pam_authz_search (&(objectClass=posixAccount)(uid=$username)(|(host=$hostname)(host=$fqdn)(&(host=\\*)(!(|(host=!$hostname)(host=!$fqdn))))))
+
+tmux_packages: tmux
+tmux_packages_state: present
+tmux_plugin_dir: .tmux/plugins
+tmux_conf_template: tmux.conf
+tmux_conf_dir: .tmux
+tmux_conf_file: .tmux.conf
+tmux_conf_force: false
+tmux_plugins:
+  - { name: "tpm", repo: "https://github.com/tbasset/tpm.git", version: "v3.0.0" }
+
+powerline_default_top_theme: powerline
+

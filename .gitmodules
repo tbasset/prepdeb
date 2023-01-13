@@ -4,3 +4,9 @@
 [submodule "roles/ansible-role-interfaces"]
 	path = roles/ansible-role-interfaces
 	url = https://github.com/tbasset/ansible-role-interfaces.git
+[submodule "roles/ansible-role-powerline"]
+	path = roles/ansible-role-powerline
+	url = https://github.com/tbasset/ansible-role-powerline.git
+[submodule "roles/ansible-role-tmux"]
+	path = roles/ansible-role-tmux
+	url = https://github.com/tbasset/ansible-role-tmux.git
