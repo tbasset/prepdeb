@@ -13,3 +13,6 @@
 [submodule "roles/ansible-role-ca-certificates"]
 	path = roles/ansible-role-ca-certificates
 	url = https://github.com/tbasset/ansible-role-ca-certificates.git
+[submodule "roles/ansible-role-grub"]
+	path = roles/ansible-role-grub
+	url = https://github.com/tbasset/ansible-role-grub.git

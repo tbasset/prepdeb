@@ -2,6 +2,7 @@
 - hosts: localhost
   gather_facts: true
   roles:
+    - ansible-role-grub
     - ansible-role-interfaces
     - ansible-role-ca-certificates
     - ansible-role-ldap
