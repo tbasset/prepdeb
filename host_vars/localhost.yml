@@ -4,19 +4,11 @@ ansible_python_interpreter: /usr/bin/python3
 ca_certificates_trusted: "{{ xca_certificates_trusted }}"
 ca_certificates_update: true
 
-ldap_version: 3
-ldap_home_umask: "0022"
-ldap_tls_reqcert: never
-ldap_uri: ldap://172.16.203.20
-ldap_base: ou=Users,dc=lab,dc=loxda,dc=net
-ldap_scope: sub
-ldap_bind_timelimit: 50
-ldap_search_timelimit: 50
+ldap_tls_reqcert: always
+ldap_uri: "{{ xldap_uri }}"
+ldap_base: "{{ xldap_base }}"
 ldap_binddn: "{{ xldap_binddn }}"
 ldap_bindpw: "{{ xldap_bindpw }}"
-ldap_pagesize: 1000
-ldap_referrals: 'yes'
-ldap_idle_timelimit: 300
 ldap_filters: |
   filter passwd (|(objectClass=posixAccount)(objectClass=inetOrgPerson))
   filter shadow (|(objectClass=posixAccount)(objectClass=inetOrgPerson))
@@ -48,9 +40,10 @@ interfaces_route_tables: []
   # - network: 192.168.100.0
   #   netmask: 255.255.255.0
   #   gateway: 192.168.1.1
-interfaces_ether_interfaces: []
-  # - device: eth0
-  #   mtu: 1500
+interfaces_ether_interfaces:
+  - device: eth0
+    mtu: 1500
+    bootproto: dhcp
   # - device: eth1
   #   mtu: 1500
   # - device: eth2
