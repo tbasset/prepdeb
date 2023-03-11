@@ -1,6 +1,6 @@
 # prepdeb
 
-git clone url prepdeb<br/>
+git clone https://github.com/tbasset/prepdeb.git prepdeb<br/>
 cd prepdeb<br/>
 git module init --update<br/>
 <br/>
