@@ -6,10 +6,11 @@
       tags: 
         - grub
         - never
+#    - ansible-role-hosts
+#    - ansible-role-resolv
     - ansible-role-interfaces
+#    - ansible-role-firewall
     - ansible-role-ca-certificates
     - ansible-role-ldap
     - ansible-role-tmux
     - ansible-role-powerline
-    - ansible-role-interfaces
-    # - ansible-role-firewall
