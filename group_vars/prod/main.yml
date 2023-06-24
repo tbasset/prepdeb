@@ -1,1 +1,3 @@
 ---
+vlan_src: 'group_vars/prod'
+vlan_num: 001

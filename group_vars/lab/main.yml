@@ -1,1 +1,3 @@
 ---
+vlan_src: 'group_vars/lab'
+vlan_num: 900

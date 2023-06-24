@@ -1,0 +1,3 @@
+---
+vlan_src: 'invventory/dev'
+vlan_num: 900

@@ -1,0 +1,3 @@
+---
+vlan_src: 'invventory/preprod'
+vlan_num: 100
