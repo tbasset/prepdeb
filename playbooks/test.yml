@@ -6,4 +6,10 @@
 
     - name: debug var 
       debug: 
-        msg: 'src={{vlan_src}} num={{vlan_num}}' 
+        msg: "
+              src={{vlan_src}} \n
+              vlan_num=={{vlan_num}} \n
+              vlan_name={{vlan_name}} \n
+              vlan_ipv4_sub={{vlan_ipv4_sub}} \n
+              vlan_ipv4_gw={{vlan_ipv4_gw}}
+              " 
