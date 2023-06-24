@@ -10,5 +10,5 @@
           - "src={{if vlan_src is defined}}"
           - "vlan_num=={{if vlan_num is defined}}"
           - "vlan_name={{if vlan_name is defined}}"
-          - "vlan_ipv4_sub={{vlan_ipv4_sub}}"
-          - "vlan_ipv4_gw={{vlan_ipv4_gw}}"
+          - "vlan_ipv4_sub={{if vlan_ipv4_sub is defined}}"
+          - "vlan_ipv4_gw={{if vlan_ipv4_gw is defined}}"
