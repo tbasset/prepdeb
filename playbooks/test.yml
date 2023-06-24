@@ -7,9 +7,9 @@
     - name: test
       debug: 
         msg: 
+          - "group_names={{ hostvars[group_names] }}"
           - "src={{ vlan_src | default('nothing') }}"
           - "vlan_num=={{ vlan_num | default('') }}"
           - "vlan_name={{ vlan_name | default('') }}"
           - "vlan_ipv4_sub={{ vlan_ipv4_sub | default('') }}"
           - "vlan_ipv4_gw={{ vlan_ipv4_gw | default('') }}"
-          - "{{ hostvars[inventory_hostname] }}"
