@@ -12,3 +12,4 @@
           - "vlan_name={{ vlan_name | default('') }}"
           - "vlan_ipv4_sub={{ vlan_ipv4_sub | default('') }}"
           - "vlan_ipv4_gw={{ vlan_ipv4_gw | default('') }}"
+          - "{{ inventory_hostname }}"
