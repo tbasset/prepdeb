@@ -7,7 +7,7 @@
     - name: test
       debug: 
         msg: 
-          - "group_names={{ hostvars[group_names] }}"
+          - "groups={{ inventory_hostname[groups] }}"
           - "src={{ vlan_src | default('nothing') }}"
           - "vlan_num=={{ vlan_num | default('') }}"
           - "vlan_name={{ vlan_name | default('') }}"
