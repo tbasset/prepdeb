@@ -9,6 +9,6 @@
         msg: 
           - "src={{vlan_src}}"
           - "vlan_num=={{vlan_num}}"
-          - "vlan_name={{vlan_name}}"
+          - "vlan_name={{if vlan_name is defined}}"
           - "vlan_ipv4_sub={{vlan_ipv4_sub}}"
           - "vlan_ipv4_gw={{vlan_ipv4_gw}}"
