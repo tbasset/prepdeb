@@ -1,1 +1,2 @@
+[prod]
 localhost ansible_connection=local
