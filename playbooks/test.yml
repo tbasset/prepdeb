@@ -4,5 +4,6 @@
 
   tasks:
 
-    - debug: 
-      msg: 'src={{vlan_src}} num={{vlan_num}}' 
+    - name: debug var 
+      debug: 
+        msg: 'src={{vlan_src}} num={{vlan_num}}' 
