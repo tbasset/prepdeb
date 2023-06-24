@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: home
   gather_facts: false
 
   tasks:
