@@ -8,6 +8,7 @@
       debug: 
         msg: 
           #- "groups={{ inventory_hostname[groups] }}"
+          - "env_home={{ env_home | default('nothing') }}"
           - "src={{ vlan_src | default('nothing') }}"
           - "vlan_num=={{ vlan_num | default('') }}"
           - "vlan_name={{ vlan_name | default('') }}"
