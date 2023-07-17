@@ -7,6 +7,8 @@ grub_options:
     value: 0
   - option: ipv6.disable
     value: 1
+  - option: transparent_hugepage
+    value: never
 
 ca_certificates_trusted: "{{ xca_certificates_trusted }}"
 ca_certificates_update: true
