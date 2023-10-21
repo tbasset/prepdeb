@@ -24,6 +24,7 @@
   roles:
 
     - role: ansible-role-grub
+      become: true
       tags: 
         - grub
         - never
