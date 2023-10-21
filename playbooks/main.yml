@@ -7,7 +7,7 @@
     - name: test
       debug: 
         msg: 
-          - "{{ inventory_hostname | d('') }}"
+          - "host={{ inventory_hostname | d('') }}"
           # - "{{ hostvars[inventory_hostname] | d('') }}"
           - "groups={{ inventory_hostname[groups] | d('') }}"
           - "env_home={{ env_home | d('') }}"
@@ -20,15 +20,45 @@
           - "vlan_ipv4_gw={{ vlan_ipv4_gw | d('') }}"
 
   roles:
-    - role: ansible-role-grub
+
+    - ansible-role-grub
       tags: 
         - grub
         - never
 #    - ansible-role-hosts
+#      tags: 
+#        - hosts
+#        - never
+
 #    - ansible-role-resolv
-    - role: ansible-role-interfaces
+#      tags: 
+#        - resolv
+#        - never
+    - ansible-role-interfaces
+      tags: 
+        - network
+        - never
 #    - ansible-role-firewall
-    - role: ansible-role-ca-certificates
-    - role: ansible-role-ldap
-    - role: ansible-role-tmux
-    - role: ansible-role-powerline
+    - ansible-role-ca-certificates
+      tags: 
+        - cacerts
+        - never
+    - ansible-role-ldap
+      tags: 
+        - ldap
+        - never
+    - ansible-role-tmux
+      tags: 
+        - tmux
+        - never
+    - ansible-role-powerline
+      tags: 
+        - powerline
+        - never
+
+  post_tasks:
+
+    - name: test
+      debug: 
+        msg: 
+          - "finish."

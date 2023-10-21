@@ -1,3 +1,12 @@
 ---
 ansible_python_interpreter: /usr/bin/python3
 env_home: 'lab'
+
+grub_timeout: 2
+grub_options:
+  - option: net.ifnames
+    value: 0
+  - option: ipv6.disable
+    value: 1
+  - option: transparent_hugepage
+    value: never
