@@ -1,6 +1,23 @@
 ---
 - hosts: lab
   gather_facts: true
+
+  pre_tasks:
+
+    - name: test
+      debug: 
+        msg: 
+          - "{{ hostvars[inventory_hostname] }}"
+          - "groups={{ inventory_hostname[groups] }}"
+          - "env_home={{ env_home | default('nothing') }}"
+          - "group_vars_folder={{ group_vars_folder | default('nothing') }}"
+          - "group_vars_inventory_folder={{ group_vars_inventory_folder | default('nothing') }}"
+          - "src={{ vlan_src | default('nothing') }}"
+          - "vlan_num=={{ vlan_num | default('') }}"
+          - "vlan_name={{ vlan_name | default('') }}"
+          - "vlan_ipv4_sub={{ vlan_ipv4_sub | default('') }}"
+          - "vlan_ipv4_gw={{ vlan_ipv4_gw | default('') }}"
+
   roles:
     - role: ansible-role-grub
       tags: 
