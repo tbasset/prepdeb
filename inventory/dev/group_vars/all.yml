@@ -4,4 +4,4 @@ vlan_num: 400
 vlan_name: 'NET_DEV'
 vlan_ipv4_sub: '10.192.0.0/16'
 vlan_ipv4_gw: '10.192.0.1'
-group_vars_inventory folder: dev
+group_vars_inventory_folder: dev

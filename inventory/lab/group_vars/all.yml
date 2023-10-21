@@ -4,4 +4,4 @@ vlan_num: 900
 vlan_name: 'NET_LAB'
 vlan_ipv4_sub: '10.201.0.0/16'
 vlan_ipv4_gw: '10.201.0.1'
-group_vars_inventory folder: lab
+group_vars_inventory_folder: lab

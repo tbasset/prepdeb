@@ -4,4 +4,4 @@ vlan_num: 1
 vlan_name: 'NET_PROD'
 vlan_ipv4_sub: '10.1.0.0/16'
 vlan_ipv4_gw: '10.1.0.1'
-group_vars_inventory folder: prod
+group_vars_inventory_folder: prod
