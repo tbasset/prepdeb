@@ -7,7 +7,8 @@
     - name: test
       debug: 
         msg: 
-          - "{{ hostvars[inventory_hostname] | d('') }}"
+          - "{{ inventory_hostname | d('') }}"
+          # - "{{ hostvars[inventory_hostname] | d('') }}"
           - "groups={{ inventory_hostname[groups] | d('') }}"
           - "env_home={{ env_home | d('') }}"
           - "group_vars_folder={{ group_vars_folder | d('') }}"
@@ -25,9 +26,9 @@
         - never
 #    - ansible-role-hosts
 #    - ansible-role-resolv
-    - ansible-role-interfaces
+    - role: ansible-role-interfaces
 #    - ansible-role-firewall
-    - ansible-role-ca-certificates
-    - ansible-role-ldap
-    - ansible-role-tmux
-    - ansible-role-powerline
+    - role: ansible-role-ca-certificates
+    - role: ansible-role-ldap
+    - role: ansible-role-tmux
+    - role: ansible-role-powerline
