@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: lab
   gather_facts: true
   roles:
     - role: ansible-role-grub
