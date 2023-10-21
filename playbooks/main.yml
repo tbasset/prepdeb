@@ -18,6 +18,8 @@
           - "vlan_name={{ vlan_name | d('') }}"
           - "vlan_ipv4_sub={{ vlan_ipv4_sub | d('') }}"
           - "vlan_ipv4_gw={{ vlan_ipv4_gw | d('') }}"
+      tags: 
+        - always
 
   roles:
 
@@ -62,3 +64,5 @@
       debug: 
         msg: 
           - "finish."
+      tags: 
+        - always
