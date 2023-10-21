@@ -21,37 +21,37 @@
 
   roles:
 
-    - ansible-role-grub
+    - role: ansible-role-grub
       tags: 
         - grub
         - never
-#    - ansible-role-hosts
+#    - role: ansible-role-hosts
 #      tags: 
 #        - hosts
 #        - never
 
-#    - ansible-role-resolv
+#    - role: ansible-role-resolv
 #      tags: 
 #        - resolv
 #        - never
-    - ansible-role-interfaces
+    - role: ansible-role-interfaces
       tags: 
         - network
         - never
 #    - ansible-role-firewall
-    - ansible-role-ca-certificates
+    - role: ansible-role-ca-certificates
       tags: 
         - cacerts
         - never
-    - ansible-role-ldap
+    - role: ansible-role-ldap
       tags: 
         - ldap
         - never
-    - ansible-role-tmux
+    - role: ansible-role-tmux
       tags: 
         - tmux
         - never
-    - ansible-role-powerline
+    - role: ansible-role-powerline
       tags: 
         - powerline
         - never
