@@ -1,3 +1,3 @@
 [prod]
 localhost ansible_connection=local
-home ansible_connection=local
+home

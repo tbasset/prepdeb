@@ -9,7 +9,8 @@
         msg: 
           #- "groups={{ inventory_hostname[groups] }}"
           - "env_home={{ env_home | default('nothing') }}"
-          - "env_group={{ env_group | default('nothing') }}"
+          - "group_vars_folder={{ group_vars_folder | default('nothing') }}"
+          - "group_vars_inventory_folder={{ group_vars_inventory_folder | default('nothing') }}"
           - "src={{ vlan_src | default('nothing') }}"
           - "vlan_num=={{ vlan_num | default('') }}"
           - "vlan_name={{ vlan_name | default('') }}"
