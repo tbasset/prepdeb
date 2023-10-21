@@ -7,16 +7,16 @@
     - name: test
       debug: 
         msg: 
-          - "{{ hostvars[inventory_hostname] }}"
-          - "groups={{ inventory_hostname[groups] }}"
-          - "env_home={{ env_home | default('nothing') }}"
-          - "group_vars_folder={{ group_vars_folder | default('nothing') }}"
-          - "group_vars_inventory_folder={{ group_vars_inventory_folder | default('nothing') }}"
-          - "src={{ vlan_src | default('nothing') }}"
-          - "vlan_num=={{ vlan_num | default('') }}"
-          - "vlan_name={{ vlan_name | default('') }}"
-          - "vlan_ipv4_sub={{ vlan_ipv4_sub | default('') }}"
-          - "vlan_ipv4_gw={{ vlan_ipv4_gw | default('') }}"
+          - "{{ hostvars[inventory_hostname] | d('') }}"
+          - "groups={{ inventory_hostname[groups] | d('') }}"
+          - "env_home={{ env_home | d('') }}"
+          - "group_vars_folder={{ group_vars_folder | d('') }}"
+          - "group_vars_inventory_folder={{ group_vars_inventory_folder | d('') }}"
+          - "src={{ vlan_src | d('') }}"
+          - "vlan_num=={{ vlan_num | d('') }}"
+          - "vlan_name={{ vlan_name | d('') }}"
+          - "vlan_ipv4_sub={{ vlan_ipv4_sub | d('') }}"
+          - "vlan_ipv4_gw={{ vlan_ipv4_gw | d('') }}"
 
   roles:
     - role: ansible-role-grub
