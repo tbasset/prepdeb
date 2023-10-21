@@ -1,2 +1,2 @@
 ---
-env_group: 'preprod'
+group_vars_folder: 'preprod'

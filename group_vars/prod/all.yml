@@ -1,2 +1,2 @@
 ---
-env_group: 'prod'
+group_vars_folder: 'prod'

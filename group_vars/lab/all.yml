@@ -1,2 +1,2 @@
 ---
-env_group: 'lab'
+group_vars_folder: 'lab'

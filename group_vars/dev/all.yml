@@ -1,2 +1,2 @@
 ---
-env_group: 'dev'
+group_vars_folder: 'dev'
